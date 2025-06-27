@@ -33,6 +33,24 @@ export default function RootLayout({
             gtag('config', 'AW-17199374460');
           `,
         }} />
+        {/* Google Ads Conversion Event Function */}
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            function gtag_report_conversion(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined') {
+                  window.location = url;
+                }
+              };
+              gtag('event', 'conversion', {
+                  'send_to': 'AW-17199374460/U1dzCOur0eMaEPzApolA',
+                  'transaction_id': '',
+                  'event_callback': callback
+              });
+              return false;
+            }
+          `,
+        }} />
       </head>
       <body className={inter.className}>
         <Header />
