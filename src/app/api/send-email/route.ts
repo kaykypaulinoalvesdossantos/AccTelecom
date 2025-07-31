@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
       method: 'POST',
       headers: {
         'accept': 'application/json',
-        'api-key': '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',
+        'api-key': process.env.SENDINBLUE_API_KEY!,
         'content-type': 'application/json',
       },
       body: JSON.stringify(payload),
